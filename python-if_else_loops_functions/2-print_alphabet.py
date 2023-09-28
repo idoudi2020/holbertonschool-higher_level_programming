@@ -4,7 +4,7 @@ for x in  range(97,123):
     print("{:c}".format(x), end="")
 
 """
-same code avec 
-print(f'{chr(x)}', end="")
-print("{}".format(chr(x)), end="")
+we cane use this also 
+(f'{chr(x)}', end="")
+("{}".format(chr(x)), end="")
 """
