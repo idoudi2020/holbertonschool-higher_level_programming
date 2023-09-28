@@ -4,7 +4,7 @@ for x in  range(97,123):
 
     '''
     same code avec 
-    print('{:c}'.format(x), end="")
-    print("{}".format(chr(x)), end="")
+    #print('{:c}'.format(x), end="")
+    #print("{}".format(chr(x)), end="")
 
     '''
