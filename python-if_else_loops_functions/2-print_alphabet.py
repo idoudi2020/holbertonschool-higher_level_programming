@@ -5,6 +5,6 @@ for x in  range(97,123):
 
 """
 we cane use this also 
-#print(f'{chr(x)}', end="")
-#print("{}".format(chr(x)), end="")
+(f'{chr(x)}', end="")
+("{}".format(chr(x)), end="")
 """
