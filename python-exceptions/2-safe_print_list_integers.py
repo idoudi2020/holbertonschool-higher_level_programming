@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-def safe_print_division(a, b):
+def safe_print_list_integers(my_list=[], x=0):
+    count = 0
     try:
-        result = a / b
-    except ZeroDivisionError:
-        result = None
-    finally:
-        print("Inside result: {}".format(result))
-    return result
+        for i in range(x):
+            if type(my_list[i]) == int:
+                print("{:d}".format(my_list[i]), end="")
+                count += 1
+        print()
+    except (TypeError, ValueError):
+        pass
+    return count
