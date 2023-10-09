@@ -1,18 +1,9 @@
 #!/usr/bin/python3
-def list_division(my_list_1, my_list_2, list_length):
-    result = []
-    for i in range(list_length):
-        try:
-            quotation = my_list_1[i] / my_list_2[i]
-        except TypeError:
-            print("wrong type")
-            quotation = 0
-        except ZeroDivisionError:
-            print("division by 0")
-            quotation = 0
-        except IndexError:
-            print("out of range")
-            quotation = 0
-        finally:
-            result.append(quotation)
+def safe_print_division(a, b):
+    try:
+        result = a / b
+    except ZeroDivisionError:
+        result = None
+    finally:
+        print("Inside result: {}".format(result))
     return result
