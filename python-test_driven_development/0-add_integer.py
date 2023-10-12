@@ -4,17 +4,27 @@ add 2 integers a and b
 """
 
 
+
 def add_integer(a, b=98):
-    """ function that adds two integers
-    Args :
-        a (int): first number
-        b (int): second number = 98
-    Return : sum of both values (int)
+    """Adds two integers.
+
+    Args:
+        a: the first integer.
+        b: the second integer, default 98.
+
+    Raises:
+        TypeError: if a, b are not int, float.
+
+    Returns:
+        The sum of the two integers.
     """
 
-    if not isinstance(a, (int, float)):
-        raise TypeError("a must be an integer")
-    if type(b) not in [int, float]:
-        raise TypeError("b must be an integer")
-
+    if type(a) not in (int, float):
+        raise TypeError('a must be an integer')
+    if type(b) not in (int, float):
+        raise TypeError('b must be an integer')
     return int(a) + int(b)
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/0-add_integer.txt")
