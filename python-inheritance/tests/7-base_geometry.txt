@@ -1,0 +1,70 @@
+The ``7-base_geometry`` module
+======================
+
+Using ``integer_validator``
+-------------------
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+**Basic input**
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+
+**passing value as str**
+>>> try:
+...     bg.integer_validator("name", "John")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[TypeError] name must be an integer
+
+**passing 0**
+>>> try:
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[ValueError] age must be greater than 0
+
+**passing negative value**
+>>> try:
+...     bg.integer_validator("distance", -4)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[ValueError] distance must be greater than 0
+
+**fake name**
+>>> try:
+...     bg.integer_validator(name, -4)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[NameError] name 'name' is not defined
+
+**0 arg for area func**
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+**Module docstring:**
+>>> test = __import__("7-base_geometry").__doc__
+>>> len(test) > 1
+True
+
+**Class docstring**
+>>> test = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(test) > 1
+True
+
+**Area Method docstring**
+>>> test = __import__("7-base_geometry").BaseGeometry.area.__doc__
+>>> len(test) > 1
+True
+
+**integer_validator Method docstring**
+>>> test = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+>>> len(test) > 1
+True
